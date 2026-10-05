@@ -36,6 +36,12 @@ export type Purchase = {
   updated_at: string;
   currency: string;
   goal: string;
+  research_brief: {
+    original_input: string | null;
+    objectives: string[];
+    challenge_assumptions: string[];
+    research_depth: "quick" | "standard" | "deep";
+  };
   constraints: {
     must: string[];
     prefer: string[];
