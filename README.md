@@ -12,10 +12,12 @@ The unit of work is a **purchase decision**, not a bookmark. A purchase can begi
 ├── preferences.md
 ├── .agents/
 │   └── skills/
+│       ├── intake/
 │       ├── shopping/
 │       ├── research/
 │       └── monitoring/
-├── inbox/\n├── purchases/
+├── inbox/
+├── purchases/
 │   ├── active/
 │   ├── purchased/
 │   └── abandoned/
@@ -25,16 +27,15 @@ The unit of work is a **purchase decision**, not a bookmark. A purchase can begi
 └── src/
 ```
 
-## Typical usage with an agent
+## Preferred usage: direct agent intake
 
-Give it either a link:
+With a repo-aware agent, just send a product link:
 
 ```
-Add https://example.com/product to my shopping system.
-Research it and tell me whether it belongs to an existing purchase.
+https://example.com/product
 ```
 
-or a need:
+or a shopping need:
 
 ```
 I need noise-cancelling headphones for flights.
@@ -42,21 +43,32 @@ Comfort matters more than microphone quality.
 Budget is 3000 SEK.
 ```
 
-The repository instructions tell the agent to reuse an existing active purchase where possible, research exact product identity and alternatives, preserve source links, and update the structured decision state.
+The agent should use the repo-scoped intake/shopping skills, search existing active purchases, research the product or need, and persist the result directly.
 
-## Local CLI
+Messages such as "add this", "is this a good deal?", "research this", or "consider this" should all work as intake.
 
-Requires Node.js 24+ and Yarn 4.
+## CLI / capture intake
+
+For a browser share action, Shortcut, or other integration that cannot do the research itself:
 
 ```bash
 yarn install
+yarn shop intake "https://example.com/product"
+yarn shop intake "I need noise-cancelling headphones under 3000 SEK"
+```
+
+This writes a tiny pending record to `inbox/`. A later repo-aware agent run can consume it and turn it into durable purchase state.
+
+Other local commands:
+
+```bash
 yarn shop new "Apple Watch Ultra"
 yarn shop status
 yarn shop validate
 yarn typecheck
 ```
 
-`shop intake` captures a URL or description in `inbox/` for later agent processing. When a repo-aware agent is available, direct chat intake should bypass the inbox and update the active purchase immediately.\n\n`shop new` creates:
+`shop new` creates:
 
 ```
 purchases/active/<slug>/
@@ -64,6 +76,8 @@ purchases/active/<slug>/
 ├── research.md
 └── decision.md
 ```
+
+See `docs/intake.md` for the complete intake contract.
 
 ## Data model
 
@@ -79,6 +93,10 @@ purchases/active/<slug>/
 Long-form evidence belongs in `research.md`. The eventual outcome and rationale belong in `decision.md`.
 
 See `schemas/purchase.schema.json` for the machine-readable contract.
+
+## First live purchase
+
+`purchases/active/apple-watch-ultra/` is the first real decision used to pressure-test the system. It currently frames the choice as Ultra 2 refurb vs Ultra 3 refurb vs Ultra 4 new, with monitoring enabled for unusually strong value opportunities.
 
 ## Monitoring
 
@@ -96,8 +114,8 @@ A purchase can also become `abandoned` or `deferred`.
 
 ## Next likely additions
 
-- URL/share-sheet ingestion into the same purchase model;
-- scheduled market/listing monitors;
+- scheduled market/listing monitors that act on the stored monitoring intent;
 - observation store for price history;
 - richer normalization for condition, warranty, seller, and variant identity;
-- purchase-history-derived preference learning.
+- purchase-history-derived preference learning;
+- a share-sheet / Shortcut integration that calls the same inbox contract.
