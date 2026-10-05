@@ -8,6 +8,12 @@ currency: SEK
 
 goal: ""
 
+research_brief:
+  original_input: null
+  objectives: []
+  challenge_assumptions: []
+  research_depth: standard
+
 constraints:
   must: []
   prefer: []
