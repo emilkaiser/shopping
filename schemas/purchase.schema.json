@@ -1,0 +1,430 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/emilkaiser/shopping/schemas/purchase.schema.json",
+  "title": "Shopping purchase",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "title",
+    "status",
+    "created_at",
+    "updated_at",
+    "currency",
+    "goal",
+    "constraints",
+    "criteria",
+    "open_questions",
+    "candidates",
+    "monitoring",
+    "current_recommendation",
+    "research_brief",
+    "related_items"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "inbox",
+        "researching",
+        "shortlist",
+        "waiting",
+        "ready_to_buy",
+        "purchased",
+        "abandoned",
+        "deferred"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "currency": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 3
+    },
+    "goal": {
+      "type": "string"
+    },
+    "constraints": {
+      "type": "object",
+      "required": [
+        "must",
+        "prefer",
+        "avoid",
+        "budget",
+        "deadline",
+        "region"
+      ],
+      "properties": {
+        "must": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "prefer": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "avoid": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "budget": {
+          "type": "object",
+          "required": [
+            "max"
+          ],
+          "properties": {
+            "max": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        "deadline": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "region": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "criteria": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "weight"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "status",
+          "sources"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "variant": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "consider",
+              "shortlist",
+              "rejected",
+              "selected"
+            ]
+          },
+          "condition": {
+            "enum": [
+              "new",
+              "used",
+              "refurbished",
+              "unknown"
+            ]
+          },
+          "effective_price": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "url"
+              ],
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "seller": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "observed_price": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "observed_at": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "monitoring": {
+      "type": "object",
+      "required": [
+        "enabled",
+        "type",
+        "trigger",
+        "notes"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "type": {
+          "enum": [
+            "listing",
+            "market",
+            "opportunity",
+            null
+          ]
+        },
+        "trigger": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "current_recommendation": {
+      "type": "object",
+      "required": [
+        "candidate_id",
+        "action",
+        "rationale"
+      ],
+      "properties": {
+        "candidate_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "action": {
+          "enum": [
+            "research",
+            "wait",
+            "buy",
+            "drop"
+          ]
+        },
+        "rationale": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "research_brief": {
+      "type": "object",
+      "required": [
+        "original_input",
+        "objectives",
+        "challenge_assumptions",
+        "research_depth"
+      ],
+      "properties": {
+        "original_input": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "objectives": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "challenge_assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "research_depth": {
+          "enum": [
+            "quick",
+            "standard",
+            "deep"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "related_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "kind",
+          "status",
+          "sources"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "accessory",
+              "service",
+              "consumable",
+              "other"
+            ]
+          },
+          "status": {
+            "enum": [
+              "consider",
+              "shortlist",
+              "selected",
+              "rejected"
+            ]
+          },
+          "effective_price": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "url"
+              ],
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "seller": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "observed_price": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "observed_at": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

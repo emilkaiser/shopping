@@ -1,0 +1,21 @@
+{
+  "name": "shopping",
+  "private": true,
+  "type": "module",
+  "packageManager": "yarn@4.10.3",
+  "scripts": {
+    "shop": "tsx src/cli.ts",
+    "validate": "tsx src/cli.ts validate",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}

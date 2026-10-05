@@ -1,0 +1,42 @@
+schema_version: 1
+id: example-purchase
+title: Example purchase
+status: inbox
+created_at: 2026-10-04
+updated_at: 2026-10-04
+currency: SEK
+
+goal: ""
+
+research_brief:
+  original_input: null
+  objectives: []
+  challenge_assumptions: []
+  research_depth: standard
+
+constraints:
+  must: []
+  prefer: []
+  avoid: []
+  budget:
+    max: null
+  deadline: null
+  region: Sweden
+
+criteria: []
+open_questions: []
+
+candidates: []
+
+related_items: []
+
+monitoring:
+  enabled: false
+  type: null
+  trigger: null
+  notes: null
+
+current_recommendation:
+  candidate_id: null
+  action: research
+  rationale: null
