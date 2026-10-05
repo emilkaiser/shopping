@@ -17,6 +17,20 @@ function slugify(input: string): string {
     .replace(/^-|-$/g, "");
 }
 
+function compactSlug(input: string): string {
+  const slug = slugify(input);
+  return slug.slice(0, 48).replace(/-+$/g, "") || "intake";
+}
+
+function isUrl(input: string): boolean {
+  try {
+    const url = new URL(input);
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch {
+    return false;
+  }
+}
+
 async function createPurchase(title: string) {
   const id = slugify(title);
   if (!id) throw new Error("Could not derive a purchase id from title.");
@@ -37,6 +51,29 @@ async function createPurchase(title: string) {
   await cp(path.join(root, "templates", "decision.md"), path.join(target, "decision.md"));
 
   console.log(`Created purchases/active/${id}`);
+}
+
+async function createIntake(input: string) {
+  if (!input) throw new Error('Usage: yarn shop intake "<url or description>"');
+
+  const now = new Date();
+  const timestamp = now.toISOString().replace(/[:.]/g, "-");
+  const kind = isUrl(input) ? "url" : "description";
+  const slugSource = kind === "url" ? new URL(input).hostname : input;
+  const filename = `${timestamp}-${compactSlug(slugSource)}.yaml`;
+  const targetDir = path.join(root, "inbox");
+  await mkdir(targetDir, { recursive: true });
+
+  const intake = {
+    schema_version: 1,
+    kind,
+    input,
+    created_at: now.toISOString(),
+    status: "pending",
+  };
+
+  await writeFile(path.join(targetDir, filename), YAML.stringify(intake));
+  console.log(`Captured inbox/${filename}`);
 }
 
 async function loadPurchase(file: string): Promise<Purchase> {
@@ -105,6 +142,11 @@ async function main() {
     return;
   }
 
+  if (command === "intake") {
+    await createIntake(args.join(" ").trim());
+    return;
+  }
+
   if (command === "validate") {
     await validate();
     return;
@@ -116,6 +158,7 @@ async function main() {
   }
 
   console.log("Usage:");
+  console.log('  yarn shop intake "<url or description>"');
   console.log("  yarn shop new <title>");
   console.log("  yarn shop validate");
   console.log("  yarn shop status");
