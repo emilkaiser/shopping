@@ -71,3 +71,12 @@ When the user buys, abandons, or defers:
 2. set final status in `purchase.yaml`;
 3. move the folder to `purchases/purchased` or `purchases/abandoned` when appropriate;
 4. preserve rationale so future shopping decisions can reuse it.
+
+
+## Direct chat intake
+
+When this repository is connected to an agent, the user should not need to invoke the CLI or manually create files.
+
+A bare product URL, or a message such as "add this", "research this", "consider this", or "I need <thing>", should be treated as shopping intake. Use `.agents/skills/intake/SKILL.md`, perform the research in the same workflow, and persist the result to the repository.
+
+Use `inbox/` only when an external integration cannot perform the research/update directly.
