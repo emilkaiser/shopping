@@ -15,7 +15,7 @@ The unit of work is a **purchase decision**, not a bookmark. A purchase can begi
 │       ├── shopping/
 │       ├── research/
 │       └── monitoring/
-├── purchases/
+├── inbox/\n├── purchases/
 │   ├── active/
 │   ├── purchased/
 │   └── abandoned/
@@ -56,7 +56,7 @@ yarn shop validate
 yarn typecheck
 ```
 
-`shop new` creates:
+`shop intake` captures a URL or description in `inbox/` for later agent processing. When a repo-aware agent is available, direct chat intake should bypass the inbox and update the active purchase immediately.\n\n`shop new` creates:
 
 ```
 purchases/active/<slug>/
