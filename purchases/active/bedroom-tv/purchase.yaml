@@ -1,0 +1,80 @@
+schema_version: 1
+id: bedroom-tv
+title: Bedroom TV
+status: shortlist
+created_at: 2026-10-05
+updated_at: 2026-10-05
+currency: SEK
+
+goal: "Buy a high-quality bedroom TV for wall mounting, with OLED preferred and strong movie/streaming picture quality."
+
+research_brief:
+  original_input: "https://www.elgiganten.se/product/tv-ljud-smart-hem/tv-tillbehor/tv/lg-42-c5-4k-oled-evo-tv-2025/912303 is this a good deal?"
+  objectives:
+    - Evaluate whether the linked LG C5 is a genuinely good deal
+    - Compare against cheaper near-equivalents
+    - Compare against meaningfully better alternatives where the premium is justified
+    - Include professional review evidence and recurring owner complaints
+    - Keep wall-mount fit and bedroom use as first-class criteria
+  challenge_assumptions:
+    - A discounted product is automatically the best value
+    - The newest generation is automatically worth paying more for
+  research_depth: standard
+
+constraints:
+  must:
+    - Fit within approximately 93 cm width
+    - Work with an articulating wall mount
+  prefer:
+    - OLED
+    - 42-inch class
+    - Excellent movie and streaming picture quality
+    - Strong value rather than newest generation for its own sake
+  avoid:
+    - Paying a large premium for small generation-to-generation improvements
+  budget:
+    max: null
+  deadline: null
+  region: Sweden
+
+criteria:
+  - name: physical_fit
+    weight: 5
+  - name: picture_quality
+    weight: 5
+  - name: price_value
+    weight: 5
+  - name: wall_mount_compatibility
+    weight: 4
+  - name: review_consensus
+    weight: 4
+
+open_questions:
+  - Is there any current C4 or competing 42-inch OLED offer cheap enough to beat the C5 on value?
+  - Is there any newer 42-inch OLED close enough in price to justify paying more?
+  - Which articulating wall mount gives enough extension and angle for the bedroom layout?
+
+candidates:
+  - id: lg-c5-42-elgiganten
+    name: LG C5 42
+    variant: 42-inch OLED, 2025
+    status: shortlist
+    condition: new
+    effective_price: 7490
+    sources:
+      - url: https://www.elgiganten.se/product/tv-ljud-smart-hem/tv-tillbehor/tv/lg-42-c5-4k-oled-evo-tv-2025/912303
+        seller: Elgiganten
+        observed_price: 7490
+        observed_at: 2026-10-05
+    notes: "Current baseline and likely buy candidate. Approx. 93 cm wide, which is acceptable. Strong review consensus for picture quality and gaming; main drawbacks are only modest gains over C4, middling built-in sound, and lower brightness than larger C5 sizes."
+
+monitoring:
+  enabled: true
+  type: market
+  trigger: "Notify if a reputable Swedish/EU seller offers a comparable 42-inch OLED that is meaningfully cheaper than 7,490 SEK, or a clearly better current-generation model comes within roughly 15-20% of this price."
+  notes: "Normalize size, panel type, generation, seller reputation, warranty, and shipping before comparing."
+
+current_recommendation:
+  candidate_id: lg-c5-42-elgiganten
+  action: buy
+  rationale: "At 7,490 SEK, the LG C5 42 is a strong deal for the intended bedroom use and acceptable width. Only hold off if a materially cheaper C4/equivalent OLED or a clearly better newer model appears unusually close in price."
