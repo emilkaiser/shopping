@@ -24,7 +24,7 @@ research_brief:
 constraints:
   must:
     - Fit within approximately 93 cm width
-    - Work with an articulating wall mount
+    - Work with an articulating wall mount that can swing the TV toward the bed by roughly 70°
   prefer:
     - OLED
     - 42-inch class
@@ -52,7 +52,6 @@ criteria:
 open_questions:
   - Is there any current C4 or competing 42-inch OLED offer cheap enough to beat the C5 on value?
   - Is there any newer 42-inch OLED close enough in price to justify paying more?
-  - Which articulating wall mount gives enough extension and angle for the bedroom layout?
 
 candidates:
   - id: lg-c5-42-elgiganten
@@ -67,6 +66,24 @@ candidates:
         observed_price: 7490
         observed_at: 2026-10-05
     notes: "Current baseline and likely buy candidate. Approx. 93 cm wide, which is acceptable. Strong review consensus for picture quality and gaming; main drawbacks are only modest gains over C4, middling built-in sound, and lower brightness than larger C5 sizes."
+
+
+related_items:
+  - id: vogels-tvm-3665
+    name: Vogel's COMFORT Full-Motion+ OLED TVM 3665
+    kind: accessory
+    status: shortlist
+    effective_price: 2499
+    sources:
+      - url: https://www.elgiganten.se/product/tv-ljud-smart-hem/tv-tillbehor/tillbehor-till-tv/vaggfaste-till-tv/vogels-comfort-full-motion-tv-oled-vaggfaste-tvm3665/357664
+        seller: Elgiganten
+        observed_price: 2499
+        observed_at: 2026-10-05
+      - url: https://www.vogels.com/sv-se/c/tvm-3665-full-motion-tv-wall-mount
+        seller: Vogel's
+        observed_price: 2499
+        observed_at: 2026-10-05
+    notes: "Selected mount candidate for the wall parallel to the bed. Supports 40–77 inch OLED TVs, up to 35 kg, up to 180° swivel, 20° tilt, and 59–670 mm wall distance. The 67 cm reach is well suited to swinging the 42-inch TV roughly 70° toward the bed."
 
 monitoring:
   enabled: true
