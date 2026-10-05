@@ -79,6 +79,15 @@ purchases/active/<slug>/
 
 See `docs/intake.md` for the complete intake contract.
 
+## Local checks
+
+Checks run locally; this repository does not use GitHub CI.
+
+```bash
+yarn typecheck
+yarn validate
+```
+
 ## Data model
 
 `purchase.yaml` is intentionally small and stable:
