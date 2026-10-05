@@ -65,3 +65,26 @@ Buy the C5 unless one of these happens before purchase:
 - https://www.elgiganten.se/product/tv-ljud-smart-hem/tv-tillbehor/tv/lg-42-c5-4k-oled-evo-tv-2025/912303
 - https://www.rtings.com/monitor/reviews/lg/c5-42-oled
 - https://www.rtings.com/monitor/tools/compare/lg-c5-42-oled-lg-c4-42-oled/113604/58174
+
+
+## Wall mount
+
+### Vogel's COMFORT Full-Motion+ OLED TVM 3665
+
+- Price observed: **2,499 SEK** at Elgiganten
+- TV compatibility: 40–77"
+- Max load: 35 kg
+- Swivel: up to 180°
+- Tilt: up to 20°
+- Distance from wall: 59–670 mm
+- Intended use: OLED TVs
+- Role: current wall-mount shortlist
+
+This matches the bedroom geometry discussed earlier: the TV sits on a wall parallel to the bed and needs to swing out toward the bed by roughly 70°. The 67 cm maximum reach and multi-pivot arm make it a strong fit for that use.
+
+The main practical check before installation is wall construction / fixing method; the mount itself has ample load capacity for a 42-inch LG OLED.
+
+### Mount sources
+
+- https://www.elgiganten.se/product/tv-ljud-smart-hem/tv-tillbehor/tillbehor-till-tv/vaggfaste-till-tv/vogels-comfort-full-motion-tv-oled-vaggfaste-tvm3665/357664
+- https://www.vogels.com/sv-se/c/tvm-3665-full-motion-tv-wall-mount
