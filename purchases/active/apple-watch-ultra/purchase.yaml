@@ -8,6 +8,18 @@ currency: SEK
 
 goal: "Replace Garmin Fenix 6 Pro with a substantial, sporty Apple Watch that improves smartwatch functionality without giving up too much sports utility."
 
+research_brief:
+  original_input: "Compare Apple Watch Ultra generations, especially refurbished previous generations, and find the best value for replacing a Garmin Fenix 6 Pro."
+  objectives:
+    - Compare Ultra 2, Ultra 3, and Ultra 4 on meaningful real-world differences
+    - Find cheaper/refurbished alternatives that preserve most of the benefit
+    - Identify whether paying more materially improves the experience
+    - Include review and owner-feedback evidence in the decision
+  challenge_assumptions:
+    - The newest generation is automatically the best choice
+    - Apple Watch Ultra is necessarily a better fit than staying with a Garmin-style sports watch
+  research_depth: standard
+
 constraints:
   must:
     - Cellular connectivity
