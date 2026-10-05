@@ -16,7 +16,7 @@ Always search existing `purchases/active` records before creating a new purchase
 When ingesting a URL or shopping need:
 
 1. Identify whether it belongs to an existing purchase.
-2. Capture the user's goal, hard requirements, preferences, budget, urgency, and open questions.
+2. Capture the user's goal, hard requirements, preferences, budget, urgency, and open questions. Do not expect all of these to be present initially; build the brief conversationally and ask high-value clarifying questions when missing answers could materially change the decision.
 3. Research exact product identity and variant before comparing prices.
 4. Separate factual specifications from subjective review evidence.
 5. Prefer primary sources for specifications, reputable reviews for testing, and owner/community sources for lived experience.
@@ -48,3 +48,8 @@ A purchase may instead become `abandoned` or `deferred`.
 
 Never infer an exact model/variant from a vague listing without marking uncertainty.
 Never compare prices across materially different storage, size, generation, condition, warranty, region, or bundle without normalizing those differences.
+
+
+## Interaction rule
+
+Shopping intake is conversational. Use the host's interactive question mechanism when available for material ambiguities. Ask a small number of decision-relevant questions rather than presenting a generic form. Persist answers so the same question is not repeated in future sessions.
