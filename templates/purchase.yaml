@@ -28,6 +28,8 @@ open_questions: []
 
 candidates: []
 
+related_items: []
+
 monitoring:
   enabled: false
   type: null
