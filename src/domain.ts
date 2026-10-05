@@ -53,6 +53,20 @@ export type Purchase = {
   criteria: Array<{ name: string; weight: number }>;
   open_questions: string[];
   candidates: Candidate[];
+  related_items: Array<{
+    id: string;
+    name: string;
+    kind: "accessory" | "service" | "consumable" | "other";
+    status: "consider" | "shortlist" | "selected" | "rejected";
+    effective_price?: number | null;
+    sources: Array<{
+      url: string;
+      seller?: string | null;
+      observed_price?: number | null;
+      observed_at?: string | null;
+    }>;
+    notes?: string | null;
+  }>;
   monitoring: {
     enabled: boolean;
     type: "listing" | "market" | "opportunity" | null;
