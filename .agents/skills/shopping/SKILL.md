@@ -80,3 +80,17 @@ When this repository is connected to an agent, the user should not need to invok
 A bare product URL, or a message such as "add this", "research this", "consider this", or "I need <thing>", should be treated as shopping intake. Use `.agents/skills/intake/SKILL.md`, perform the research in the same workflow, and persist the result to the repository.
 
 Use `inbox/` only when an external integration cannot perform the research/update directly.
+
+
+## Conversational brief building
+
+Treat the purchase brief as something built over multiple turns.
+
+The first user message is an intake signal, not a required complete specification. Before deep research:
+1. extract known constraints and preferences;
+2. inspect the existing purchase for already-known answers;
+3. ask only clarifying questions that can materially change the decision;
+4. persist the answers;
+5. continue research without requiring the user to restate prior context.
+
+Never ask for information already present in the active purchase, repository preferences, or current conversation.
