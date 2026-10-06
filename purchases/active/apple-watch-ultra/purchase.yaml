@@ -1,9 +1,9 @@
 schema_version: 1
 id: apple-watch-ultra
 title: Apple Watch Ultra
-status: researching
+status: waiting
 created_at: 2026-10-05
-updated_at: 2026-10-05
+updated_at: 2026-10-06
 currency: SEK
 
 goal: "Replace Garmin Fenix 6 Pro with a substantial, sporty Apple Watch that improves smartwatch functionality without giving up too much sports utility."
@@ -22,7 +22,7 @@ research_brief:
 
 constraints:
   must:
-    - Cellular connectivity
+    - Cellular connectivity compatible with Sweden
     - Large/substantial watch presence
     - Strong everyday smartwatch experience
   prefer:
@@ -30,9 +30,13 @@ constraints:
     - Good battery life
     - Good sports and workout tracking
     - Strong resale value
+    - Battery health around 90% or better when individually stated
+    - Reputable Swedish/EU seller with meaningful warranty and return rights
   avoid:
     - Paying a large premium for small generation-to-generation gains
     - Small-looking watch
+    - Weak or unclear battery condition on refurbished units unless price compensates
+    - Region-specific cellular variants that are not suitable for Sweden
   budget:
     max: null
   deadline: null
@@ -49,23 +53,27 @@ criteria:
     weight: 4
   - name: fit_and_aesthetics
     weight: 4
+  - name: refurb_quality_warranty
+    weight: 4
 
 open_questions:
-  - What are the meaningful real-world differences between Ultra 2, Ultra 3, and Ultra 4?
-  - What is a genuinely good Swedish refurbished/used price for Ultra 2 and Ultra 3?
   - Does Ultra 4's new health sensing, readiness, and battery life justify its premium?
-  - Which generation is the current value sweet spot?
+  - Which generation is the current value sweet spot as refurb prices move?
   - Which strap is best for sport and everyday wear?
 
 candidates:
   - id: apple-watch-ultra-2
     name: Apple Watch Ultra 2
-    variant: 49 mm GPS + Cellular
-    status: consider
+    variant: 49 mm titanium GPS + Cellular
+    status: shortlist
     condition: refurbished
-    effective_price: null
-    sources: []
-    notes: "Primary value candidate; monitor Swedish refurbished/used market."
+    effective_price: 4880
+    sources:
+      - url: https://renewed.se/products/apple-watch-ultra-2-4g-titanium
+        seller: reNewed
+        observed_price: 4880
+        observed_at: 2026-10-06
+    notes: "Primary value candidate. reNewed listing observed at 4,880 SEK, temporarily out of stock; minimum 80% battery health, 2-year warranty, 30-day free return. Prefer an individually stated battery around 90%+ when possible."
   - id: apple-watch-ultra-3
     name: Apple Watch Ultra 3
     variant: 49 mm GPS + Cellular
@@ -77,7 +85,7 @@ candidates:
         seller: Apple
         observed_price: 9995
         observed_at: 2025-09-09
-    notes: "Previous generation; potentially attractive if post-Ultra-4 pricing drops enough."
+    notes: "Previous monitoring saw refurb pricing around 6.8k SEK. Re-verify exact live listing, warranty, condition and battery before acting. Becomes notably interesting around 6,000 SEK."
   - id: apple-watch-ultra-4
     name: Apple Watch Ultra 4
     variant: 49 mm GPS + Cellular
@@ -89,15 +97,15 @@ candidates:
         seller: Apple
         observed_price: 9995
         observed_at: 2026-10-05
-    notes: "Current generation and benchmark for comparing previous-generation value."
+    notes: "Current-generation benchmark. Prefer previous generations unless battery/health improvements justify the premium or Ultra 4 discounts materially."
 
 monitoring:
   enabled: true
   type: opportunity
-  trigger: "Notify on unusually strong Swedish/EU refurbished or used Ultra 2/3 offers from reputable sellers, or a material Ultra 4 discount."
-  notes: "Normalize generation, condition, warranty, seller quality, shipping, and exact model before comparing."
+  trigger: "Notify when a reputable Swedish/EU seller offers an Ultra 2 materially below 4,500 SEK, an Ultra 3 around 6,000 SEK or lower, or another deal that is clearly stronger after normalizing generation, condition, battery health, warranty, returns, shipping, and Swedish cellular compatibility."
+  notes: "Check reputable Swedish/EU refurb/used sellers. Alert only on decision-changing deals or meaningful price drops. Do not report routine observations. Current Ultra 2 reference is 4,880 SEK at reNewed (2026-10-06), temporarily out of stock, min 80% battery health, 2-year warranty and 30-day return."
 
 current_recommendation:
-  candidate_id: null
-  action: research
-  rationale: "Ultra 2/3 refurbished value needs current market pricing before choosing against the newly released Ultra 4."
+  candidate_id: apple-watch-ultra-2
+  action: wait
+  rationale: "Ultra 2 is the current value leader, but 4,880 SEK with only an 80% minimum battery guarantee is not strong enough to rush. Wait for <4,500 SEK, a better battery-health unit, or an Ultra 3 near 6,000 SEK."
