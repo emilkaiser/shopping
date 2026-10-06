@@ -1,6 +1,6 @@
 # Research
 
-_Last updated: 2026-10-05_
+_Last updated: 2026-10-06_
 
 ## Current conclusion
 
@@ -88,3 +88,9 @@ The main practical check before installation is wall construction / fixing metho
 
 - https://www.elgiganten.se/product/tv-ljud-smart-hem/tv-tillbehor/tillbehor-till-tv/vaggfaste-till-tv/vogels-comfort-full-motion-tv-oled-vaggfaste-tvm3665/357664
 - https://www.vogels.com/sv-se/c/tvm-3665-full-motion-tv-wall-mount
+
+### Retracted wall projection — 2026-10-06
+
+User asked how far the TV and mount project when folded flat against the wall. For the shortlisted LG C5 42 and TVM 3665, allow approximately **10 cm from the wall to the front of the screen**: the recorded mount minimum is 59 mm, plus an estimated approximately 41 mm TV body depth without its stand. This is a planning estimate, not a verified installed measurement; mounting spacers, cables, or tilt may increase it.
+
+Live verification was attempted: LG and Vogel's manufacturer pages returned HTTP 403, and the Elgiganten TV listing returned HTTP 429. The TV depth therefore remains to be confirmed from an accessible exact-model specification or installation drawing.
