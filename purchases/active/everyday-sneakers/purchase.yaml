@@ -1,0 +1,83 @@
+schema_version: 1
+id: everyday-sneakers
+title: Everyday sneaker replacements
+status: researching
+created_at: 2026-10-06
+updated_at: 2026-10-06
+currency: SEK
+goal: "Replace liked Vans Old Skool and Adidas Originals Continental shoes with the same or similar shoes."
+research_brief:
+  original_input: "I like my vans old skool and my adidas originals continental. But they need to be replaced. Looking for same or similar shoes."
+  objectives:
+    - Find direct replacements and a small set of close alternatives
+    - Confirm existing variants and desired fit before comparing exact offers
+  challenge_assumptions:
+    - Continental necessarily means Continental 80; user has not confirmed the variant
+    - A different model or more cushioning necessarily improves the user's experience
+  research_depth: standard
+constraints:
+  must: []
+  prefer:
+    - Same or similar shoes to the user's liked Vans Old Skool and Adidas Originals Continental
+  avoid: []
+  budget:
+    max: null
+  deadline: null
+  region: Sweden
+criteria:
+  - name: similarity_to_liked_shoes
+    weight: 5
+open_questions:
+  - One pair to replace both, or two replacement pairs?
+  - What should be preserved or improved in looks, fit, and walking comfort?
+  - What EU size does the user wear in each current shoe, and are there fit issues?
+  - Which colours and what budget per pair?
+  - Is the existing Adidas Continental 80, and what are the exact current variants?
+  - Is there a purchase deadline?
+candidates:
+  - id: vans-old-skool
+    name: Vans Old Skool
+    variant: "User's variant unknown; reference listing VN000D3HBKA, Black, canvas/synthetic"
+    status: consider
+    condition: new
+    effective_price: null
+    sources:
+      - url: https://www.vans.com/en-se/p/old-skool-shoes-VN000D3HBKA
+        seller: Vans
+        observed_price: 899
+        observed_at: 2026-10-06
+    notes: "Direct model-family replacement. Price from search-indexed official listing; direct fetch blocked. Size stock, shipping, colour and material match unverified."
+  - id: adidas-continental-80
+    name: Adidas Continental 80
+    variant: "Reference G27706; Cloud White / Scarlet / Collegiate Navy; listed under women; user's model and size not confirmed"
+    status: consider
+    condition: new
+    effective_price: null
+    sources:
+      - url: https://www.adidas.se/continental-80-shoes/G27706.html
+        seller: Adidas
+        observed_price: 1349
+        observed_at: 2026-10-06
+    notes: "Potential direct replacement only if the user's shoe is Continental 80. Official Swedish product page checked; selectable stock in user's size and delivered cost unverified."
+  - id: reebok-club-c-85
+    name: Reebok Club C 85
+    variant: null
+    status: consider
+    condition: new
+    effective_price: null
+    sources:
+      - url: https://www.reebok.eu/sv-se/collections/club-c-85
+        seller: Reebok
+        observed_price: null
+        observed_at: 2026-10-06
+    notes: "Preliminary stylistic alternative to Continental 80. Select exact edition, colour and size before comparing prices; standard and Vintage editions are not interchangeable."
+related_items: []
+monitoring:
+  enabled: false
+  type: null
+  trigger: null
+  notes: "No decision-relevant price or availability threshold established."
+current_recommendation:
+  candidate_id: null
+  action: research
+  rationale: "Start with direct replacements; Club C 85 is the first stylistic alternative to examine. Await size, colour, budget, pair count and comfort priorities before ranking exact offers."
