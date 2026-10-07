@@ -1,0 +1,142 @@
+schema_version: 1
+id: kia-ev9
+title: Kia EV9 / seven-seat EV
+status: waiting
+created_at: 2026-10-07
+updated_at: 2026-10-07
+currency: SEK
+goal: Compare a used seven-seat Kia EV9 with other seven-seat EVs, new/demo offers and leasing on
+  equivalent total cost.
+research_brief:
+  original_input: KIA EV9, ID Buzz 7-sitsig. Vilka andra 7-sitsiga elbilar finns? Och hur ska jag
+    tänka kring köpa nytt/begsgnst (och finansiering) eller leasing?
+  objectives:
+    - Migrate prior seven-seat comparison, EV9 used-price/mileage guidance and monitoring intent
+    - Compare used EV9 AWD/Plus/GT-Line with new/demo, IONIQ 9 and ID. Buzz LWB
+    - Compare purchase/finance and leasing over the same period and distance without double-counting
+      interest
+    - Verify exact seats, history, warranty, condition and delivered price for every listing
+  challenge_assumptions:
+    - Six-seat GT-Line is an acceptable substitute for seven seats
+    - A low monthly payment means low total cost
+    - Historical target prices or assistant estimates are current market valuations
+    - An estimated residual value guarantees a future buyback
+  research_depth: standard
+constraints:
+  must:
+    - Battery electric
+    - Seven seats; verify the exact vehicle configuration
+  prefer:
+    - Used dealer car with documented history and remaining manufacturer warranty
+    - EV9 AWD/Plus/GT-Line as prior research focus; AWD not confirmed as a hard requirement
+    - Good third-row access and luggage practicality
+  avoid: []
+  budget:
+    max: null
+  deadline: null
+  region: Sweden
+criteria:
+  - name: seven_seat_practicality
+    weight: 5
+  - name: total_ownership_cost
+    weight: 5
+  - name: history_warranty_condition
+    weight: 5
+  - name: charging_and_trip_fit
+    weight: 4
+  - name: price_mileage_value
+    weight: 4
+open_questions:
+  - What are annual driving distance, ownership horizon and cash/deposit budget?
+  - How often will all seven seats and luggage space be needed together?
+  - Is AWD required, and are there towing, parking or charging constraints?
+  - Which new/demo, loan and leasing quotes apply to the same specification and mileage?
+  - Does the prior daily ChatGPT monitor still run, and what is its schedule/automation identifier?
+candidates:
+  - id: ev9-used-awd-seven
+    name: Used Kia EV9 AWD / Plus / GT-Line, seven seats
+    variant: 2024 target from prior research; verify trim, 99.8 kWh battery and seven seats
+    status: shortlist
+    condition: used
+    effective_price: null
+    sources:
+      - url: https://eu-www.kia.com/se/nya-bilar/ev9/specifications/
+        seller: Kia
+        observed_price: null
+        observed_at: 2026-10-07
+      - url: https://chatgpt.com/c/6aae8366-523c-83ed-9151-ec7b56aab6ee
+    notes: Category target, not a specific available car. Historical opportunity triggers preserved
+      below; no hard budget invented.
+  - id: ev9-gt-line-rudvi-2024
+    name: Kia EV9 AWD GT-Line, Rudvi Bil
+    variant: 2024, seven seats, 5,435 mil (54,350 km), 99.8 kWh
+    status: consider
+    condition: used
+    effective_price: null
+    sources:
+      - url: https://bilweb.se/blekinge-lan/kia-ev9-awd-gt-line-7-sits-2024-suv-407618
+        seller: Rudvi Bil via Bilweb
+        observed_price: 699900
+        observed_at: 2026-10-07
+    notes: "Checked 2026-10-07: asking price 699,900 SEK; 49,900 SEK above the historical 650,000
+      threshold. First traffic date 2023-12-21. Dealer claims warranty to 2030-12-21/15,000 mil;
+      verify service and terms. Fees/delivery not checked."
+  - id: ev9-new-demo
+    name: Kia EV9 new/demo benchmark
+    variant: Require an equivalent seven-seat drivetrain/battery/trim quote
+    status: consider
+    condition: unknown
+    effective_price: null
+    sources:
+      - url: https://www.kia.com/se/nya-bilar/ev9/upptack/
+        seller: Kia
+        observed_price: null
+        observed_at: 2026-10-07
+    notes: Current from-price is not a matched AWD/GT-Line offer. Compare cash discount, effective APR,
+      fees, warranty start and guaranteed versus estimated residual.
+  - id: ioniq-9-seven
+    name: Hyundai IONIQ 9
+    variant: Seven-seat configuration; match trim/drivetrain in a quote
+    status: consider
+    condition: new
+    effective_price: null
+    sources:
+      - url: https://www.hyundai.com/se/sv/bilar/ioniq9.html
+        seller: Hyundai Sweden
+        observed_price: null
+        observed_at: 2026-10-07
+    notes: Closest SUV comparison from prior chat. Advertised lease example needs current written terms
+      and mileage normalization; see research.
+  - id: id-buzz-lwb-seven
+    name: Volkswagen ID. Buzz LWB
+    variant: Long-wheelbase, seven-seat configuration; distinguish RWD from 4MOTION
+    status: consider
+    condition: new
+    effective_price: null
+    sources:
+      - url: https://www.volkswagen-transportbilar.se/sv/modeller/id-buzz.html/__layer/layers/bilmodeller/id_buzz/utrustning/gtx/master.layer
+        seller: Volkswagen Transportbilar
+        observed_price: null
+        observed_at: 2026-10-07
+    notes: Prior practicality alternative. Current seven-seat starting prices are contextual, not
+      like-for-like delivered EV9 prices.
+related_items: []
+monitoring:
+  enabled: true
+  type: opportunity
+  trigger: "Preserve prior targets: Swedish dealer used 2024 EV9 AWD/GT-Line, seven seats, roughly
+    4,000–5,500 mil (40,000–55,000 km), below 650,000 SEK; or seven-seat Plus/AWD around
+    610,000–630,000 SEK with comparable or lower mileage. Notify only on a new or meaningfully
+    changed qualifying opportunity after fees, history, warranty and condition checks."
+  notes: Imported intent from prior chat; not proof of an active repo scheduler. Earlier daily ChatGPT
+    monitoring was reported, but schedule/ID and current status were not verified or changed.
+    Exclude six-seat cars, unknown seat counts, materially different trims and unnormalized
+    high-mileage offers. Suppress unchanged/non-actionable listings. Targets are prior assistant
+    heuristics, not user-approved hard budget limits; review against fresh market quotes.
+current_recommendation:
+  candidate_id: ev9-used-awd-seven
+  action: wait
+  rationale: Retain used seven-seat EV9 as the provisional shortlist and historical opportunity
+    targets. The checked 699,900 SEK GT-Line is above target; this single sample cannot establish
+    that the whole market has no deals. Compare matched new/demo and IONIQ 9/ID. Buzz quotes before
+    committing.

@@ -1,0 +1,68 @@
+schema_version: 1
+id: apple-airtag-4-pack-2nd-gen
+title: Apple AirTag 4-pack (2nd generation)
+status: researching
+created_at: 2026-10-07
+updated_at: 2026-10-07
+currency: SEK
+goal: Buy four second-generation Apple AirTags with verified identity and good delivered value.
+research_brief:
+  original_input: Apple Airtag (4 pack) 2nd generation
+  objectives:
+    - Verify second-generation identity and four-unit pack
+    - Compare delivered Swedish/EU prices and device compatibility
+  challenge_assumptions:
+    - Any listing named AirTag 4-pack is the requested generation
+    - Discounted first-generation stock is equivalent
+  research_depth: standard
+constraints:
+  must:
+    - Four AirTags, second generation (2026; model A2937)
+  prefer:
+    - Sweden/EU availability with clear warranty
+  avoid: []
+  budget:
+    max: null
+  deadline: null
+  region: Sweden
+criteria:
+  - name: generation_and_pack_identity
+    weight: 5
+  - name: delivered_price
+    weight: 5
+  - name: device_compatibility
+    weight: 5
+open_questions:
+  - What delivered-price target and purchase timing should trigger a buy?
+  - Are the intended iPhone/software and Precision Finding features compatible?
+  - Are holders or keyrings needed for the four intended objects?
+candidates:
+  - id: airtag-2-four-pack-apple
+    name: Apple AirTag (2nd generation), 4-pack
+    variant: 2026 generation; AirTag model A2937; four units
+    status: shortlist
+    condition: new
+    effective_price: null
+    sources:
+      - url: https://www.apple.com/se/shop/buy-airtag/airtag/4-pack
+        seller: Apple Sweden
+        observed_price: 1295
+        observed_at: 2026-10-07
+      - url: https://support.apple.com/sv-se/102170
+        seller: Apple
+        observed_price: null
+        observed_at: 2026-10-07
+    notes: 1,295 SEK advertised pack price = 323.75 SEK per tag. Delivery not confirmed; holders
+      excluded. Confirm generation explicitly at other retailers.
+related_items: []
+monitoring:
+  enabled: false
+  type: null
+  trigger: null
+  notes: No monitor activated. Need an agreed delivered-price trigger; exclude first generation,
+    singles and accessory-only packs.
+current_recommendation:
+  candidate_id: airtag-2-four-pack-apple
+  action: research
+  rationale: Apple Sweden provides a verified generation/pack baseline at 1,295 SEK before unverified
+    delivery; compare equivalent retailer offers and device compatibility before buying.
