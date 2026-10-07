@@ -1,0 +1,125 @@
+schema_version: 1
+id: homekit-cameras
+title: HomeKit cameras and outdoor floodlight context
+status: shortlist
+created_at: 2026-10-07
+updated_at: 2026-10-07
+currency: SEK
+goal: Choose two basic indoor HomeKit cameras and preserve the separate outdoor floodlight decision.
+research_brief:
+  original_input: I think my need is a decent to good floodlight solution and two indoor himekit camera.
+  objectives:
+    - Compare two fixed indoor cameras with a pan/tilt alternative
+    - Verify native Apple Home/HKSV, power and iCloud/home-hub requirements
+    - Keep outdoor floodlighting separate from indoor camera selection
+  challenge_assumptions:
+    - Outdoor lighting must include a camera
+    - G100 and G100 Select are the same SKU
+    - 2K sensor resolution guarantees 2K recording in Apple Home
+  research_depth: standard
+constraints:
+  must:
+    - Two indoor cameras
+    - Native Apple Home compatibility
+  prefer:
+    - Basic good-value cameras
+    - HomeKit Secure Video; prior recommendation, confirm recording setup
+    - Separate effective outdoor floodlight solution
+  avoid: []
+  budget:
+    max: null
+  deadline: null
+  region: Sweden
+criteria:
+  - name: apple_home_fit
+    weight: 5
+  - name: two_camera_total_cost
+    weight: 5
+  - name: coverage_and_power
+    weight: 4
+  - name: privacy_and_recording
+    weight: 4
+open_questions:
+  - Which Apple home hub and iCloud+ tier are already available?
+  - Do the intended positions have USB power and adequate 2.4 GHz Wi-Fi; is pan/tilt needed?
+  - For outside, is automatic light enough or are person notifications/video required?
+  - Is roughly 1,000 SEK still the outdoor-light budget, and should Apple Home control be included?
+candidates:
+  - id: aqara-g100-apple
+    name: Aqara G100 — two-camera baseline
+    variant: Apple Sweden black G100 listing; exact CH-C08E/CH-C08D SKU to confirm
+    status: shortlist
+    condition: new
+    effective_price: null
+    sources:
+      - url: https://www.apple.com/se/shop/product/hsbh2zm/a/aqara-g100-inomhuskamera
+        seller: Apple Sweden
+        observed_price: 395
+        observed_at: 2026-10-07
+      - url: https://www.aqara.com/en/product/camera-g100/
+        seller: Aqara
+        observed_price: null
+        observed_at: 2026-10-07
+    notes: 395 SEK per camera; 790 SEK for two before delivery/power supplies. Earlier G100 Select
+      recommendation retained in research; do not assume this listing is Select.
+  - id: aqara-e1
+    name: Aqara Camera E1 — pan/tilt alternative
+    variant: Indoor E1; quantity two only if both positions need movement
+    status: consider
+    condition: new
+    effective_price: null
+    sources:
+      - url: https://us.aqara.com/products/camera-e1
+        seller: Aqara
+        observed_price: null
+        observed_at: 2026-10-07
+    notes: HKSV and pan/tilt. No current Swedish price verified. Compare total cost including power
+      adapters; manufacturer person detection is not itself exposed to third-party ecosystems.
+related_items:
+  - id: outdoor-pir-floodlight
+    name: Separate outdoor PIR floodlight
+    kind: accessory
+    status: consider
+    effective_price: null
+    sources:
+      - url: https://chatgpt.com/c/6a6f64c1-9244-83eb-82b6-6a0016681803
+    notes: User wants a decent-to-good floodlight; earlier roughly 1,000 SEK comment concerned the
+      outdoor discussion, not a hard cap for all cameras. Conventional PIR light or Apple Home
+      sensor plus suitable light control remains unresolved.
+  - id: tapo-c720
+    name: Tapo C720 outdoor floodlight camera
+    kind: accessory
+    status: consider
+    effective_price: null
+    sources:
+      - url: https://www.tapo.com/en/product/smart-camera/tapo-c720/
+        seller: TP-Link
+        observed_price: null
+        observed_at: 2026-10-07
+    notes: Historical alternative only if outdoor video is needed. No verified native HomeKit support;
+      not an indoor HomeKit candidate. Earlier 1,000 SEK estimate was corrected in the prior chat to
+      roughly 1,350–2,200 SEK; no current Swedish offer verified.
+  - id: icloud-home-hub
+    name: Apple home hub and iCloud+ recording plan
+    kind: service
+    status: consider
+    effective_price: null
+    sources:
+      - url: https://support.apple.com/en-ie/guide/icloud/mme054c72692/icloud
+        seller: Apple
+        observed_price: null
+        observed_at: 2026-10-07
+    notes: Check existing setup before adding cost. Apple lists one HKSV camera at 50 GB, up to five at
+      200 GB, unlimited at 2 TB and above.
+monitoring:
+  enabled: false
+  type: null
+  trigger: null
+  notes: No monitor activated. Confirm exact camera SKU, two-camera delivered cost and recording setup
+    before setting a target. Keep floodlight offers separate.
+current_recommendation:
+  candidate_id: aqara-g100-apple
+  action: research
+  rationale: Retain two fixed G100-family cameras as the value shortlist; fresh Apple reference totals
+    790 SEK before power/delivery. Confirm G100 versus Select, installation and recording
+    prerequisites; choose E1 only where pan/tilt adds value.

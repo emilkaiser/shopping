@@ -1,0 +1,82 @@
+schema_version: 1
+id: nintendo-switch-2
+title: Nintendo Switch 2
+status: researching
+created_at: 2026-10-07
+updated_at: 2026-10-07
+currency: SEK
+goal: Choose a Nintendo Switch 2 package with good Sweden/EU value.
+research_brief:
+  original_input: Nintendo Switch 2
+  objectives:
+    - Verify console, region and bundle identity before comparing prices
+    - Compare console-only, wanted-game bundles and reputable used/refurbished offers
+    - Account for required controllers, games and storage
+  challenge_assumptions:
+    - A bundle is good value even when its game is unwanted
+    - Original Switch storage and accessories all work unchanged
+  research_depth: standard
+constraints:
+  must:
+    - Nintendo Switch 2; do not substitute original Switch, Lite or OLED
+  prefer:
+    - Sweden/EU seller with clear warranty and returns
+    - Used/refurbished when savings justify condition and warranty
+  avoid: []
+  budget:
+    max: null
+  deadline: null
+  region: Sweden
+criteria:
+  - name: variant_and_game_fit
+    weight: 5
+  - name: total_package_value
+    weight: 5
+  - name: warranty_and_condition
+    weight: 4
+open_questions:
+  - Which games and how many simultaneous players should the package support?
+  - What is the budget and desired purchase date?
+  - Which existing Switch games/controllers are intended for reuse?
+candidates:
+  - id: switch-2-console
+    name: Nintendo Switch 2
+    variant: 256 GB console-only package; Swedish retailer EAN 0045496337216
+    status: consider
+    condition: new
+    effective_price: null
+    sources:
+      - url: https://www.nintendo.com/gaming-systems/switch-2/tech-specs/
+        seller: Nintendo
+        observed_price: null
+        observed_at: 2026-10-07
+      - url: https://www.elgiganten.se/product/gaming/spelkonsoler-tillbehor/nintendo-switch/nintendo-konsol/nintendo-switch-2-spelkonsol/913960
+        seller: Elgiganten
+        observed_price: 6590
+        observed_at: 2026-10-07
+    notes: 6,590 SEK advertised incl. VAT; delivery and final stock not checked. Includes dock, Joy-Con
+      2 pair and AC adapter. Effective price awaits delivery quote.
+related_items:
+  - id: microsd-express
+    name: microSD Express storage, if needed
+    kind: accessory
+    status: consider
+    effective_price: null
+    sources:
+      - url: https://www.nintendo.com/en-gb/Support/Nintendo-Switch-2/microSD-Card-and-microSD-Express-Card-Compatibility-2797377.html
+        seller: Nintendo
+        observed_price: null
+        observed_at: 2026-10-07
+    notes: Optional after assessing the built-in storage; ordinary microSD is not game-storage expansion
+      for Switch 2.
+monitoring:
+  enabled: false
+  type: null
+  trigger: null
+  notes: No monitor activated. Establish wanted bundle and a delivered-price target first; compare new
+    and used separately.
+current_recommendation:
+  candidate_id: null
+  action: research
+  rationale: Research package value before buying; 6,590 SEK is one retailer reference, not an
+    established market-low price.
